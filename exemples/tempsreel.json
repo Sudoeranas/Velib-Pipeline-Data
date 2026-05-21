@@ -1,0 +1,405 @@
+{
+    "total_count": 1511,
+    "results": [
+        {
+            "stationcode": "14111",
+            "name": "Cassini - Denfert-Rochereau",
+            "is_installed": "OUI",
+            "capacity": 25,
+            "numdocksavailable": 17,
+            "numbikesavailable": 8,
+            "mechanical": 0,
+            "ebike": 8,
+            "is_renting": "OUI",
+            "is_returning": "OUI",
+            "duedate": "2026-05-18T13:50:05+00:00",
+            "coordonnees_geo": {
+                "lon": 2.3360354080796,
+                "lat": 48.837525839067
+            },
+            "nom_arrondissement_communes": "Paris",
+            "code_insee_commune": "75056",
+            "station_opening_hours": null
+        },
+        {
+            "stationcode": "14014",
+            "name": "Jourdan - Stade Charl\u00e9ty",
+            "is_installed": "OUI",
+            "capacity": 60,
+            "numdocksavailable": 54,
+            "numbikesavailable": 5,
+            "mechanical": 2,
+            "ebike": 3,
+            "is_renting": "OUI",
+            "is_returning": "OUI",
+            "duedate": "2026-05-18T13:46:27+00:00",
+            "coordonnees_geo": {
+                "lon": 2.3433353751898,
+                "lat": 48.819428333369
+            },
+            "nom_arrondissement_communes": "Paris",
+            "code_insee_commune": "75056",
+            "station_opening_hours": null
+        },
+        {
+            "stationcode": "11104",
+            "name": "Charonne - Robert et Sonia Delaunay",
+            "is_installed": "OUI",
+            "capacity": 20,
+            "numdocksavailable": 18,
+            "numbikesavailable": 2,
+            "mechanical": 0,
+            "ebike": 2,
+            "is_renting": "OUI",
+            "is_returning": "OUI",
+            "duedate": "2026-05-18T13:47:24+00:00",
+            "coordonnees_geo": {
+                "lon": 2.3925706744194,
+                "lat": 48.855907555969
+            },
+            "nom_arrondissement_communes": "Paris",
+            "code_insee_commune": "75056",
+            "station_opening_hours": null
+        },
+        {
+            "stationcode": "8026",
+            "name": "Messine - Place Du P\u00e9rou",
+            "is_installed": "OUI",
+            "capacity": 12,
+            "numdocksavailable": 0,
+            "numbikesavailable": 12,
+            "mechanical": 2,
+            "ebike": 10,
+            "is_renting": "OUI",
+            "is_returning": "OUI",
+            "duedate": "2026-05-18T13:46:26+00:00",
+            "coordonnees_geo": {
+                "lon": 2.315508019010038,
+                "lat": 48.875448033960744
+            },
+            "nom_arrondissement_communes": "Paris",
+            "code_insee_commune": "75056",
+            "station_opening_hours": null
+        },
+        {
+            "stationcode": "7002",
+            "name": "Vaneau - S\u00e8vres",
+            "is_installed": "OUI",
+            "capacity": 35,
+            "numdocksavailable": 25,
+            "numbikesavailable": 9,
+            "mechanical": 7,
+            "ebike": 2,
+            "is_renting": "OUI",
+            "is_returning": "OUI",
+            "duedate": "2026-05-18T13:50:08+00:00",
+            "coordonnees_geo": {
+                "lon": 2.3204218259346,
+                "lat": 48.848563233059
+            },
+            "nom_arrondissement_communes": "Paris",
+            "code_insee_commune": "75056",
+            "station_opening_hours": null
+        },
+        {
+            "stationcode": "5110",
+            "name": "Lac\u00e9p\u00e8de - Monge",
+            "is_installed": "OUI",
+            "capacity": 23,
+            "numdocksavailable": 18,
+            "numbikesavailable": 5,
+            "mechanical": 5,
+            "ebike": 0,
+            "is_renting": "OUI",
+            "is_returning": "OUI",
+            "duedate": "2026-05-18T13:41:51+00:00",
+            "coordonnees_geo": {
+                "lon": 2.3519663885235786,
+                "lat": 48.84389286531899
+            },
+            "nom_arrondissement_communes": "Paris",
+            "code_insee_commune": "75056",
+            "station_opening_hours": null
+        },
+        {
+            "stationcode": "6108",
+            "name": "Saint-Romain - Cherche-Midi",
+            "is_installed": "OUI",
+            "capacity": 17,
+            "numdocksavailable": 9,
+            "numbikesavailable": 8,
+            "mechanical": 8,
+            "ebike": 0,
+            "is_renting": "OUI",
+            "is_returning": "OUI",
+            "duedate": "2026-05-18T13:42:34+00:00",
+            "coordonnees_geo": {
+                "lon": 2.321374788880348,
+                "lat": 48.84708159081946
+            },
+            "nom_arrondissement_communes": "Paris",
+            "code_insee_commune": "75056",
+            "station_opening_hours": null
+        },
+        {
+            "stationcode": "33006",
+            "name": "Andr\u00e9 Karman - R\u00e9publique",
+            "is_installed": "OUI",
+            "capacity": 31,
+            "numdocksavailable": 28,
+            "numbikesavailable": 3,
+            "mechanical": 2,
+            "ebike": 1,
+            "is_renting": "OUI",
+            "is_returning": "OUI",
+            "duedate": "2026-05-18T13:43:42+00:00",
+            "coordonnees_geo": {
+                "lon": 2.3851355910301213,
+                "lat": 48.91039875761846
+            },
+            "nom_arrondissement_communes": "Aubervilliers",
+            "code_insee_commune": "93001",
+            "station_opening_hours": null
+        },
+        {
+            "stationcode": "42016",
+            "name": "Pierre et Marie Curie - Maurice Thorez",
+            "is_installed": "OUI",
+            "capacity": 27,
+            "numdocksavailable": 24,
+            "numbikesavailable": 3,
+            "mechanical": 2,
+            "ebike": 1,
+            "is_renting": "OUI",
+            "is_returning": "OUI",
+            "duedate": "2026-05-18T13:49:56+00:00",
+            "coordonnees_geo": {
+                "lon": 2.376804985105991,
+                "lat": 48.81580226360801
+            },
+            "nom_arrondissement_communes": "Ivry-sur-Seine",
+            "code_insee_commune": "94041",
+            "station_opening_hours": null
+        },
+        {
+            "stationcode": "7003",
+            "name": "Square Boucicaut",
+            "is_installed": "OUI",
+            "capacity": 60,
+            "numdocksavailable": 4,
+            "numbikesavailable": 55,
+            "mechanical": 43,
+            "ebike": 12,
+            "is_renting": "OUI",
+            "is_returning": "OUI",
+            "duedate": "2026-05-18T13:49:09+00:00",
+            "coordonnees_geo": {
+                "lon": 2.325061820447445,
+                "lat": 48.851296433665276
+            },
+            "nom_arrondissement_communes": "Paris",
+            "code_insee_commune": "75056",
+            "station_opening_hours": null
+        },
+        {
+            "stationcode": "17041",
+            "name": "Guersant - Gouvion-Saint-Cyr",
+            "is_installed": "OUI",
+            "capacity": 36,
+            "numdocksavailable": 20,
+            "numbikesavailable": 14,
+            "mechanical": 11,
+            "ebike": 3,
+            "is_renting": "OUI",
+            "is_returning": "OUI",
+            "duedate": "2026-05-18T13:50:00+00:00",
+            "coordonnees_geo": {
+                "lon": 2.287667370814871,
+                "lat": 48.88287775178599
+            },
+            "nom_arrondissement_communes": "Paris",
+            "code_insee_commune": "75056",
+            "station_opening_hours": null
+        },
+        {
+            "stationcode": "11025",
+            "name": "Froment - Br\u00e9guet",
+            "is_installed": "OUI",
+            "capacity": 43,
+            "numdocksavailable": 3,
+            "numbikesavailable": 39,
+            "mechanical": 31,
+            "ebike": 8,
+            "is_renting": "OUI",
+            "is_returning": "OUI",
+            "duedate": "2026-05-18T13:48:55+00:00",
+            "coordonnees_geo": {
+                "lon": 2.37289470306807,
+                "lat": 48.8570414504784
+            },
+            "nom_arrondissement_communes": "Paris",
+            "code_insee_commune": "75056",
+            "station_opening_hours": null
+        },
+        {
+            "stationcode": "17026",
+            "name": "Jouffroy d'Abbans - Wagram",
+            "is_installed": "OUI",
+            "capacity": 40,
+            "numdocksavailable": 31,
+            "numbikesavailable": 9,
+            "mechanical": 5,
+            "ebike": 4,
+            "is_renting": "OUI",
+            "is_returning": "OUI",
+            "duedate": "2026-05-18T13:49:33+00:00",
+            "coordonnees_geo": {
+                "lon": 2.301132157445,
+                "lat": 48.881973298352
+            },
+            "nom_arrondissement_communes": "Paris",
+            "code_insee_commune": "75056",
+            "station_opening_hours": null
+        },
+        {
+            "stationcode": "42208",
+            "name": "Place des Marseillais",
+            "is_installed": "OUI",
+            "capacity": 35,
+            "numdocksavailable": 21,
+            "numbikesavailable": 12,
+            "mechanical": 8,
+            "ebike": 4,
+            "is_renting": "OUI",
+            "is_returning": "OUI",
+            "duedate": "2026-05-18T13:46:24+00:00",
+            "coordonnees_geo": {
+                "lon": 2.4059119927899,
+                "lat": 48.826605522232
+            },
+            "nom_arrondissement_communes": "Charenton-le-Pont",
+            "code_insee_commune": "94018",
+            "station_opening_hours": null
+        },
+        {
+            "stationcode": "5016",
+            "name": "Thouin - Cardinal Lemoine",
+            "is_installed": "OUI",
+            "capacity": 17,
+            "numdocksavailable": 4,
+            "numbikesavailable": 12,
+            "mechanical": 2,
+            "ebike": 10,
+            "is_renting": "OUI",
+            "is_returning": "OUI",
+            "duedate": "2026-05-18T13:49:59+00:00",
+            "coordonnees_geo": {
+                "lon": 2.3494647851273,
+                "lat": 48.845047166615
+            },
+            "nom_arrondissement_communes": "Paris",
+            "code_insee_commune": "75056",
+            "station_opening_hours": null
+        },
+        {
+            "stationcode": "21010",
+            "name": "Silly - Galli\u00e9ni",
+            "is_installed": "OUI",
+            "capacity": 25,
+            "numdocksavailable": 21,
+            "numbikesavailable": 4,
+            "mechanical": 4,
+            "ebike": 0,
+            "is_renting": "OUI",
+            "is_returning": "OUI",
+            "duedate": "2026-05-18T13:48:07+00:00",
+            "coordonnees_geo": {
+                "lon": 2.2325500845909,
+                "lat": 48.835583838706
+            },
+            "nom_arrondissement_communes": "Boulogne-Billancourt",
+            "code_insee_commune": "92012",
+            "station_opening_hours": null
+        },
+        {
+            "stationcode": "14108",
+            "name": "Le Brix et Mesmin - Jourdan",
+            "is_installed": "OUI",
+            "capacity": 21,
+            "numdocksavailable": 18,
+            "numbikesavailable": 2,
+            "mechanical": 1,
+            "ebike": 1,
+            "is_renting": "OUI",
+            "is_returning": "OUI",
+            "duedate": "2026-05-18T13:46:48+00:00",
+            "coordonnees_geo": {
+                "lon": 2.327861653302471,
+                "lat": 48.82234096593411
+            },
+            "nom_arrondissement_communes": "Paris",
+            "code_insee_commune": "75056",
+            "station_opening_hours": null
+        },
+        {
+            "stationcode": "17044",
+            "name": "Porte de Saint-Ouen - Bessi\u00e8res",
+            "is_installed": "OUI",
+            "capacity": 42,
+            "numdocksavailable": 40,
+            "numbikesavailable": 2,
+            "mechanical": 0,
+            "ebike": 2,
+            "is_renting": "OUI",
+            "is_returning": "OUI",
+            "duedate": "2026-05-18T13:46:26+00:00",
+            "coordonnees_geo": {
+                "lon": 2.32851451022192,
+                "lat": 48.89792240854517
+            },
+            "nom_arrondissement_communes": "Paris",
+            "code_insee_commune": "75056",
+            "station_opening_hours": null
+        },
+        {
+            "stationcode": "19033",
+            "name": "Cambrai - Benjamin Constant",
+            "is_installed": "OUI",
+            "capacity": 43,
+            "numdocksavailable": 33,
+            "numbikesavailable": 9,
+            "mechanical": 6,
+            "ebike": 3,
+            "is_renting": "OUI",
+            "is_returning": "OUI",
+            "duedate": "2026-05-18T13:47:16+00:00",
+            "coordonnees_geo": {
+                "lon": 2.381133802246315,
+                "lat": 48.89594736851349
+            },
+            "nom_arrondissement_communes": "Paris",
+            "code_insee_commune": "75056",
+            "station_opening_hours": null
+        },
+        {
+            "stationcode": "21326",
+            "name": "Moulin de Pierre - Abb\u00e9 Gr\u00e9goire",
+            "is_installed": "OUI",
+            "capacity": 20,
+            "numdocksavailable": 17,
+            "numbikesavailable": 3,
+            "mechanical": 0,
+            "ebike": 3,
+            "is_renting": "OUI",
+            "is_returning": "OUI",
+            "duedate": "2026-05-18T13:48:21+00:00",
+            "coordonnees_geo": {
+                "lon": 2.2754641655975,
+                "lat": 48.822036188382
+            },
+            "nom_arrondissement_communes": "Issy-les-Moulineaux",
+            "code_insee_commune": "92040",
+            "station_opening_hours": null
+        }
+    ]
+}

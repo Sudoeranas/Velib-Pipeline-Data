@@ -116,7 +116,22 @@ ipython_config.py
 # pdm.toml
 .pdm-python
 .pdm-build/
+.pdm-python
+.pdm-build/
+claude.md
+contexte/
 
+# Données locales (raw pipeline)
+data/
+
+# Airflow local (DB, logs, config)
+airflow/
+
+# Credentials dbt
+dbt/profiles.yml
+
+# Variables d'environnement
+.env
 # pixi
 #   Similar to Pipfile.lock, it is generally recommended to include pixi.lock in version control.
 # pixi.lock
