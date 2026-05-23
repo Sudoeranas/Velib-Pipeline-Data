@@ -162,6 +162,15 @@ activemq-data/
 # SageMath parsed files
 *.sage.py
 
+# GCP credentials (jamais commiter les vrais fichiers)
+credentials/gcp-service-account.json
+velib-*.json
+
+# Données brutes locales et logs Airflow
+data/
+logs/
+airflow/
+
 # Environments
 .env
 .envrc

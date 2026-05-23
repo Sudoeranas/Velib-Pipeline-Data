@@ -1,13 +1,12 @@
 """
 DAG : Ingestion référentiel stations Vélib
-Schedule : une fois par jour (données quasi-statiques)
+Schedule : toutes les 30 minutes
 Source   : opendata.paris.fr — velib-emplacement-des-stations
-Stockage : data/raw/stations/YYYY/MM/DD/ (local dev) → GCS en prod
+Stockage : GCS bucket_velib_paris/raw/stations/YYYY/MM/DD/
 """
 
 from __future__ import annotations
 
-import json
 import sys
 from datetime import datetime, timezone
 from pathlib import Path
@@ -17,30 +16,23 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
 from airflow import DAG
 from airflow.operators.python import PythonOperator
 from velib.api_client import fetch_stations
-
-RAW_DIR = Path(__file__).resolve().parents[1] / "data" / "raw" / "stations"
+from velib.gcs_client import stations_gcs_path, upload_json
 
 
 def ingest_stations(**context) -> None:
     ts: datetime = context["logical_date"]
     records = fetch_stations()
 
-    partition = RAW_DIR / ts.strftime("%Y") / ts.strftime("%m") / ts.strftime("%d")
-    partition.mkdir(parents=True, exist_ok=True)
+    payload = {"ingested_at": ts.isoformat(), "total": len(records), "records": records}
+    uri = upload_json(payload, stations_gcs_path(ts))
 
-    filepath = partition / f"stations_{ts.strftime('%Y%m%d')}.json"
-    filepath.write_text(
-        json.dumps({"ingested_at": ts.isoformat(), "total": len(records), "records": records}, ensure_ascii=False),
-        encoding="utf-8",
-    )
-
-    print(f"✅ {len(records)} stations → {filepath}")
+    print(f"✅ {len(records)} stations → {uri}")
 
 
 with DAG(
     dag_id="velib_stations_ingestion",
-    description="Ingestion référentiel stations Vélib (quotidien)",
-    schedule="0 */12 * * *",
+    description="Ingestion référentiel stations Vélib toutes les 30min",
+    schedule="*/1 * * * *",
     start_date=datetime(2026, 5, 18, tzinfo=timezone.utc),
     catchup=False,
     max_active_runs=1,
@@ -53,6 +45,6 @@ with DAG(
 ) as dag:
 
     PythonOperator(
-        task_id="fetch_and_save_stations",
+        task_id="fetch_and_upload_stations",
         python_callable=ingest_stations,
     )
