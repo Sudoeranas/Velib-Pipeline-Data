@@ -1,17 +1,13 @@
 """
 DAG : Ingestion disponibilité Vélib en temps réel
-Schedule : toutes les 30 minutes
+Schedule : toutes les 6h
 Source   : opendata.paris.fr — velib-disponibilite-en-temps-reel
 Stockage : GCS bucket_velib_paris/raw/availability/YYYY/MM/DD/HH/
 """
 
 from __future__ import annotations
 
-import sys
-from datetime import datetime, timezone
-from pathlib import Path
-
-sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
+from datetime import datetime, timedelta, timezone
 
 from airflow import DAG
 from airflow.operators.python import PythonOperator
@@ -19,9 +15,23 @@ from velib.api_client import fetch_availability
 from velib.gcs_client import availability_gcs_path, upload_json
 
 
+def on_failure(context) -> None:
+    dag_id = context["dag"].dag_id
+    task_id = context["task"].task_id
+    ts = context["logical_date"]
+    exception = context.get("exception")
+    print(
+        f"❌ ÉCHEC DAG={dag_id} TASK={task_id} "
+        f"ts={ts.isoformat()} error={exception}"
+    )
+
+
 def ingest_availability(**context) -> None:
     ts: datetime = context["logical_date"]
     records = fetch_availability()
+
+    if not records:
+        raise ValueError("API a retourné 0 stations — run annulé")
 
     payload = {"ingested_at": ts.isoformat(), "total": len(records), "records": records}
     uri = upload_json(payload, availability_gcs_path(ts))
@@ -31,15 +41,17 @@ def ingest_availability(**context) -> None:
 
 with DAG(
     dag_id="velib_availability_ingestion",
-    description="Ingestion disponibilité Vélib toutes les 30min",
-    schedule="*/1 * * * *",
+    description="Ingestion disponibilité Vélib toutes les 6h",
+    schedule="0 */6 * * *",
     start_date=datetime(2026, 5, 18, tzinfo=timezone.utc),
     catchup=False,
     max_active_runs=1,
     default_args={
         "retries": 3,
-        "retry_delay": 30,
+        "retry_delay": timedelta(seconds=30),
+        "retry_exponential_backoff": True,
         "owner": "data-engineering",
+        "on_failure_callback": on_failure,
     },
     tags=["velib", "ingestion", "raw"],
 ) as dag:

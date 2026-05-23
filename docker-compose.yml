@@ -1,15 +1,21 @@
 version: '3.8'
 
 x-airflow-common: &airflow-common
-  image: apache/airflow:2.10.0-python3.11
+  build: .
+  image: velib-airflow:latest
   environment:
     AIRFLOW__CORE__EXECUTOR: LocalExecutor
     AIRFLOW__DATABASE__SQL_ALCHEMY_CONN: postgresql+psycopg2://airflow:airflow@postgres/airflow
     AIRFLOW__CORE__LOAD_EXAMPLES: 'false'
-    AIRFLOW__WEBSERVER__SECRET_KEY: velib-mspr-secret-2026
+    AIRFLOW__WEBSERVER__SECRET_KEY: ${AIRFLOW_SECRET_KEY:-changeme-in-production}
     AIRFLOW__SCHEDULER__MIN_FILE_PROCESS_INTERVAL: '10'
     PYTHONPATH: /opt/airflow/src
     GOOGLE_APPLICATION_CREDENTIALS: /opt/airflow/credentials/gcp-service-account.json
+    # Envoi des métriques Airflow vers Prometheus via StatsD
+    AIRFLOW__METRICS__STATSD_ON: 'true'
+    AIRFLOW__METRICS__STATSD_HOST: statsd-exporter
+    AIRFLOW__METRICS__STATSD_PORT: '8125'
+    AIRFLOW__METRICS__STATSD_PREFIX: airflow
   volumes:
     - ./dags:/opt/airflow/dags
     - ./src:/opt/airflow/src
