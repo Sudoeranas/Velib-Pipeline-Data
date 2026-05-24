@@ -16,12 +16,16 @@ x-airflow-common: &airflow-common
     AIRFLOW__METRICS__STATSD_HOST: statsd-exporter
     AIRFLOW__METRICS__STATSD_PORT: '8125'
     AIRFLOW__METRICS__STATSD_PREFIX: airflow
+    SNOWFLAKE_ACCOUNT: ${SNOWFLAKE_ACCOUNT:-ZZHNGGJ-MPB61332}
+    SNOWFLAKE_USER: ${SNOWFLAKE_USER:-DBT_USER}
+    SNOWFLAKE_PASSWORD: ${SNOWFLAKE_PASSWORD:-Velib2026!}
   volumes:
     - ./dags:/opt/airflow/dags
     - ./src:/opt/airflow/src
     - ./data:/opt/airflow/data
     - ./logs:/opt/airflow/logs
     - ./credentials/gcp-service-account.json:/opt/airflow/credentials/gcp-service-account.json:ro
+    - ./velib_dbt:/opt/airflow/velib_dbt
   depends_on:
     postgres:
       condition: service_healthy

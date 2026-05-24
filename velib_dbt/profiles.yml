@@ -3,9 +3,9 @@ velib_dbt:
   outputs:
     dev:
       type: snowflake
-      account: ZZHNGGJ-MPB61332
-      user: DBT_USER
-      password: "Velib2026!"
+      account: "{{ env_var('SNOWFLAKE_ACCOUNT') }}"
+      user: "{{ env_var('SNOWFLAKE_USER') }}"
+      password: "{{ env_var('SNOWFLAKE_PASSWORD') }}"
       role: DATA_ENGINEER
       warehouse: VELIB_WH
       database: VELIB_STAGING
