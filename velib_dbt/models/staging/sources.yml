@@ -1,0 +1,19 @@
+version: 2
+
+sources:
+  - name: raw
+    database: VELIB_RAW
+    schema: RAW
+    tables:
+      - name: raw_availability
+        description: "Données brutes disponibilité Vélib depuis GCS"
+        freshness:
+          warn_after: {count: 7, period: hour}
+          error_after: {count: 24, period: hour}
+        loaded_at_field: ingested_at
+      - name: raw_stations
+        description: "Données brutes stations Vélib depuis GCS"
+        freshness:
+          warn_after: {count: 24, period: hour}
+          error_after: {count: 72, period: hour}
+        loaded_at_field: ingested_at

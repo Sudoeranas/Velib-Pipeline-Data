@@ -1,0 +1,21 @@
+name: velib_dbt
+version: '1.0.0'
+config-version: 2
+
+profile: velib_dbt
+
+model-paths: ["models"]
+test-paths: ["tests"]
+snapshot-paths: ["snapshots"]
+clean-targets: ["target", "dbt_packages"]
+
+models:
+  velib_dbt:
+    staging:
+      +schema: STAGING
+      +database: VELIB_STAGING
+      +materialized: view
+    marts:
+      +schema: MARTS
+      +database: VELIB_MARTS
+      +materialized: table

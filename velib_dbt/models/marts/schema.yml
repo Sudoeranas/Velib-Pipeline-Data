@@ -1,0 +1,32 @@
+version: 2
+
+models:
+  - name: mart_station_availability
+    description: "Disponibilité horaire par station — pour BI et Direction Mobilité"
+    columns:
+      - name: station_id
+        tests:
+          - not_null
+      - name: hour_bucket
+        tests:
+          - not_null
+      - name: avg_bikes_available
+        tests:
+          - not_null
+
+  - name: mart_demand_forecast
+    description: "Agrégats par jour/heure pour les modèles ML de prédiction"
+    columns:
+      - name: station_id
+        tests:
+          - not_null
+      - name: day_of_week
+        tests:
+          - not_null
+          - accepted_values:
+              values: [0, 1, 2, 3, 4, 5, 6]
+      - name: hour_of_day
+        tests:
+          - not_null
+          - accepted_values:
+              values: [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23]

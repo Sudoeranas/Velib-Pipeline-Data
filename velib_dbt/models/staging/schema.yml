@@ -1,0 +1,37 @@
+version: 2
+
+models:
+  - name: stg_availability
+    description: "Disponibilité Vélib nettoyée et dédupliquée"
+    columns:
+      - name: station_id
+        description: "Identifiant unique de la station"
+        tests:
+          - not_null
+      - name: bikes_available
+        tests:
+          - not_null
+      - name: docks_available
+        tests:
+          - not_null
+      - name: ingested_at
+        tests:
+          - not_null
+
+  - name: stg_stations
+    description: "Référentiel stations Vélib nettoyé"
+    columns:
+      - name: station_id
+        description: "Identifiant unique de la station"
+        tests:
+          - not_null
+          - unique
+      - name: capacity
+        tests:
+          - not_null
+      - name: latitude
+        tests:
+          - not_null
+      - name: longitude
+        tests:
+          - not_null
