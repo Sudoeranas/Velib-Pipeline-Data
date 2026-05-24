@@ -6,14 +6,6 @@ sources:
     schema: RAW
     tables:
       - name: raw_availability
-        description: "Données brutes disponibilité Vélib depuis GCS"
-        freshness:
-          warn_after: {count: 7, period: hour}
-          error_after: {count: 24, period: hour}
-        loaded_at_field: ingested_at
+        description: "JSON bruts disponibilité Vélib depuis GCS (1 row = 1 fichier)"
       - name: raw_stations
-        description: "Données brutes stations Vélib depuis GCS"
-        freshness:
-          warn_after: {count: 24, period: hour}
-          error_after: {count: 72, period: hour}
-        loaded_at_field: ingested_at
+        description: "JSON bruts stations Vélib depuis GCS (1 row = 1 fichier)"
