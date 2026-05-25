@@ -14,7 +14,7 @@ hourly as (
         s.capacity,
         s.latitude,
         s.longitude,
-        date_trunc('hour', a.ingested_at)           as hour_bucket,
+        date_trunc('hour', a.updated_at)            as hour_bucket,
         avg(a.bikes_available)::int                 as avg_bikes_available,
         avg(a.docks_available)::int                 as avg_docks_available,
         avg(a.mechanical_bikes)::int                as avg_mechanical,
