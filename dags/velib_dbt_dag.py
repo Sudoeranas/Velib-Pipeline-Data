@@ -27,12 +27,12 @@ with DAG(
 
     dbt_run = BashOperator(
         task_id="dbt_run",
-        bash_command="cd /opt/airflow/velib_dbt && dbt run --profiles-dir /opt/airflow/velib_dbt",
+        bash_command="cd /opt/airflow/velib_dbt && dbt --log-path /tmp/dbt_logs run --profiles-dir /opt/airflow/velib_dbt",
     )
 
     dbt_test = BashOperator(
         task_id="dbt_test",
-        bash_command="cd /opt/airflow/velib_dbt && dbt test --profiles-dir /opt/airflow/velib_dbt",
+        bash_command="cd /opt/airflow/velib_dbt && dbt --log-path /tmp/dbt_logs test --profiles-dir /opt/airflow/velib_dbt",
     )
 
     dbt_run >> dbt_test
