@@ -17,6 +17,14 @@ scrape_configs:
         labels:
           env: local
 
+  # Métriques containers VM Airflow
+  - job_name: cadvisor_airflow
+    static_configs:
+      - targets: ["34.22.120.14:8081"]
+        labels:
+          env: local
+          vm: airflow
+
   # Prometheus lui-même
   - job_name: prometheus
     static_configs:

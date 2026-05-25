@@ -13,7 +13,7 @@ x-airflow-common: &airflow-common
     GOOGLE_APPLICATION_CREDENTIALS: /opt/airflow/credentials/gcp-service-account.json
     # Envoi des métriques Airflow vers Prometheus via StatsD
     AIRFLOW__METRICS__STATSD_ON: 'true'
-    AIRFLOW__METRICS__STATSD_HOST: statsd-exporter
+    AIRFLOW__METRICS__STATSD_HOST: ${MONITORING_VM_IP:-34.62.7.39}
     AIRFLOW__METRICS__STATSD_PORT: '8125'
     AIRFLOW__METRICS__STATSD_PREFIX: airflow
     SNOWFLAKE_ACCOUNT: ${SNOWFLAKE_ACCOUNT:-ZZHNGGJ-MPB61332}
@@ -79,6 +79,17 @@ services:
       timeout: 10s
       retries: 5
       start_period: 60s
+
+  cadvisor:
+    image: gcr.io/cadvisor/cadvisor:latest
+    ports:
+      - "8081:8080"
+    volumes:
+      - /:/rootfs:ro
+      - /var/run:/var/run:ro
+      - /sys:/sys:ro
+      - /var/lib/docker/:/var/lib/docker:ro
+    restart: always
 
 volumes:
   postgres_data:
