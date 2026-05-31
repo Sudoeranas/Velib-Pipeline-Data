@@ -18,7 +18,7 @@ aggregated as (
         hour(a.updated_at)                          as hour_of_day,
         avg(a.bikes_available)::float               as avg_bikes_available,
         avg(a.docks_available)::float               as avg_docks_available,
-        stddev(a.bikes_available)::float            as stddev_bikes,
+        stddev(a.bikes_available)::int              as stddev_bikes,
         count(*)                                    as observation_count,
         min(a.updated_at)                           as first_seen,
         max(a.updated_at)                           as last_seen
