@@ -19,8 +19,8 @@ flattened as (
         source.data:ingested_at::timestamp_tz       as ingested_at
     from source,
     lateral flatten(input => source.data:records) f
-    where f.value:stationcode is not null
-      and f.value:numbikesavailable is not null
+    where f.value:stationcode::varchar is not null
+      and f.value:numbikesavailable::int is not null
 )
 
 select * from flattened

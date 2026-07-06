@@ -120,9 +120,9 @@ Snowflake (VELIB_MARTS)
 
 | DAG | Schedule | Description |
 |---|---|---|
-| `velib_availability_ingestion` | `0 */6 * * *` | Fetch API disponibilité → GCS |
-| `velib_stations_ingestion` | `0 */6 * * *` | Fetch API stations → GCS |
-| `velib_dbt_transform` | `30 */6 * * *` | dbt run + dbt test (après ingestion) |
+| `velib_availability_ingestion` | `0 * * * *` | Fetch API disponibilité → GCS |
+| `velib_stations_ingestion` | `0 * * * *` | Fetch API stations → GCS |
+| `velib_dbt_transform` | `30 * * * *` | dbt run + dbt test (après ingestion) |
 
 Paramètres communs : retry=3, retry_delay=30s, retry_exponential_backoff, on_failure_callback, max_active_runs=1
 

@@ -1,6 +1,6 @@
 """
 DAG : Ingestion disponibilité Vélib en temps réel
-Schedule : toutes les 6h
+Schedule : toutes les heures
 Source   : opendata.paris.fr — velib-disponibilite-en-temps-reel
 Stockage : GCS bucket_velib_paris/raw/availability/YYYY/MM/DD/HH/
 """
@@ -41,8 +41,8 @@ def ingest_availability(**context) -> None:
 
 with DAG(
     dag_id="velib_availability_ingestion",
-    description="Ingestion disponibilité Vélib toutes les 6h",
-    schedule="0 */6 * * *",
+    description="Ingestion disponibilité Vélib toutes les heures",
+    schedule="0 * * * *",
     start_date=datetime(2026, 5, 18, tzinfo=timezone.utc),
     catchup=False,
     max_active_runs=1,

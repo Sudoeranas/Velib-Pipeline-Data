@@ -1,6 +1,6 @@
 """
 DAG : Ingestion référentiel stations Vélib
-Schedule : toutes les 6h
+Schedule : toutes les heures
 Source   : opendata.paris.fr — velib-emplacement-des-stations
 Stockage : GCS bucket_velib_paris/raw/stations/YYYY/MM/DD/
 """
@@ -41,8 +41,8 @@ def ingest_stations(**context) -> None:
 
 with DAG(
     dag_id="velib_stations_ingestion",
-    description="Ingestion référentiel stations Vélib toutes les 6h",
-    schedule="0 */6 * * *",
+    description="Ingestion référentiel stations Vélib toutes les heures",
+    schedule="0 * * * *",
     start_date=datetime(2026, 5, 18, tzinfo=timezone.utc),
     catchup=False,
     max_active_runs=1,

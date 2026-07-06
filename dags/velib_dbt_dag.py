@@ -1,6 +1,6 @@
 """
 DAG : Transformations dbt (RAW -> STAGING -> MARTS)
-Schedule : après chaque ingestion (toutes les 6h)
+Schedule : après chaque ingestion (toutes les heures)
 """
 
 from __future__ import annotations
@@ -13,7 +13,7 @@ from airflow.operators.bash import BashOperator
 with DAG(
     dag_id="velib_dbt_transform",
     description="Transformations dbt RAW -> STAGING -> MARTS",
-    schedule="30 */6 * * *",
+    schedule="30 * * * *",
     start_date=datetime(2026, 5, 18, tzinfo=timezone.utc),
     catchup=False,
     max_active_runs=1,
