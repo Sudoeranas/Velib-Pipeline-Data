@@ -51,6 +51,7 @@ Snowflake (VELIB_MARTS)
   │  mart_station_availability : agrégats horaires par station (BI / Direction Mobilité)
   │  mart_demand_forecast      : agrégats jour/heure pour les modèles ML
 ```
+<img width="1897" height="926" alt="VelibData_Full drawio" src="https://github.com/user-attachments/assets/353b620f-4a55-4acc-8643-2dc5d768b2bd" />
 
 ---
 
